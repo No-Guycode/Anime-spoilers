@@ -15,15 +15,15 @@
     <section class="container">
         <h2>Best Websites to Watch Anime</h2>
         <div class="anime-list">
-            <a href="https://www.crunchyroll.com" target="_blank" class="anime-card">
+            <a href="#" id="anime-card-crunchyroll" class="anime-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Crunchyroll_Logo.svg/800px-Crunchyroll_Logo.svg.png" alt="Crunchyroll">
                 <span>Crunchyroll</span>
             </a>
-            <a href="https://www.funimation.com" target="_blank" class="anime-card">
+            <a href="#" id="anime-card-funimation" class="anime-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Funimation_Logo.svg/800px-Funimation_Logo.svg.png" alt="Funimation">
                 <span>Funimation</span>
             </a>
-            <a href="https://www.netflix.com" target="_blank" class="anime-card">
+            <a href="#" id="anime-card-netflix" class="anime-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
                 <span>Netflix Anime</span>
             </a>
@@ -33,5 +33,111 @@
     <footer>
         <p>Made with passion for anime fans | Powered by Vercel</p>
     </footer>
+
+    <!-- Modal for anime selection -->
+    <div id="animeModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Your Favorite Anime</h2>
+            <select id="animeSelect">
+                <option value="jjk">Jujutsu Kaisen (JJK)</option>
+                <option value="demon-slayer">Demon Slayer</option>
+                <option value="solo-leveling">Solo Leveling</option>
+                <option value="naruto">Naruto</option>
+                <option value="one-piece">One Piece</option>
+            </select>
+            <button onclick="askIfWatching()">Proceed</button>
+        </div>
+    </div>
+
+    <!-- Modal for watching status -->
+    <div id="watchStatusModal" class="modal">
+        <div class="modal-content">
+            <h2>Have you watched it or are you currently watching it?</h2>
+            <button onclick="redirectToSite('watched')">Watched</button>
+            <button onclick="redirectToSite('not-watched')">Not Watched</button>
+        </div>
+    </div>
+
+    <script>
+        // Show the initial anime selection modal
+        window.onload = function() {
+            document.getElementById('animeModal').style.display = 'block';
+        }
+
+        // Ask if the user is watching or has watched the selected anime
+        function askIfWatching() {
+            const selectedAnime = document.getElementById('animeSelect').value;
+            localStorage.setItem('selectedAnime', selectedAnime);
+            document.getElementById('animeModal').style.display = 'none';
+            document.getElementById('watchStatusModal').style.display = 'block';
+        }
+
+        // Redirect to the appropriate page based on the user's choice
+        function redirectToSite(status) {
+            const selectedAnime = localStorage.getItem('selectedAnime');
+            let url = '';
+
+            switch(selectedAnime) {
+                case 'jjk':
+                    url = `/website/jjk/${status}`;
+                    break;
+                case 'demon-slayer':
+                    url = `/website/demon-slayer/${status}`;
+                    break;
+                case 'solo-leveling':
+                    url = `/website/solo-leveling/${status}`;
+                    break;
+                case 'naruto':
+                    url = `/website/naruto/${status}`;
+                    break;
+                case 'one-piece':
+                    url = `/website/one-piece/${status}`;
+                    break;
+                default:
+                    alert('Please select a valid anime.');
+                    return;
+            }
+
+            // Redirect to the appropriate URL
+            window.location.href = url;
+        }
+    </script>
+
+    <!-- Styles for modals -->
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .modal-content {
+            background: rgba(0, 50, 100, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #00ccff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0099cc;
+        }
+    </style>
 </body>
 </html>
