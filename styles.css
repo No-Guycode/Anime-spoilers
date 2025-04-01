@@ -11,7 +11,7 @@ body {
 
 /* Header */
 header {
-    background: rgba(255, 0, 128, 0.8);
+    background: rgba(0, 136, 255, 0.8); /* Cool Blue */
     padding: 20px;
     font-size: 24px;
     font-weight: 600;
@@ -21,7 +21,7 @@ header {
 /* Anime List Section */
 .container {
     padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 50, 100, 0.8); /* Darker Teal */
     margin: 40px auto;
     border-radius: 10px;
     width: 80%;
@@ -37,7 +37,7 @@ header {
 .anime-card {
     display: flex;
     align-items: center;
-    background: rgba(255, 0, 128, 0.9);
+    background: rgba(0, 136, 255, 0.9); /* Cool Blue */
     padding: 10px;
     border-radius: 8px;
     transition: transform 0.3s ease, background 0.3s ease;
@@ -49,7 +49,7 @@ header {
 
 .anime-card:hover {
     transform: scale(1.05);
-    background: rgba(255, 0, 150, 1);
+    background: rgba(0, 204, 255, 1); /* Lighter Blue */
 }
 
 .anime-card img {
@@ -61,7 +61,7 @@ header {
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 50, 100, 0.7); /* Darker Teal */
     padding: 10px;
     margin-top: 20px;
     font-size: 14px;
