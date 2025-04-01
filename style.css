@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.imgur.com/Q5i7hFd.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: rgba(255, 0, 128, 0.8);
+    padding: 20px;
+    font-size: 24px;
+}
+
+/* Anime List Section */
+.container {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 40px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.anime-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.anime-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 0, 128, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 0, 150, 1);
+}
+
+.anime-card img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+}
